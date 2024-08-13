@@ -17,7 +17,7 @@ O11y form CLB to Lens (using cloud managed prometheus)
 multi AZ load balancer proxy presence
 ---
 
-[ ] install istio gateway as ingress controller
+[ ] install istio gateway as gtw controller
 [ ] install dummy https service
 [ ] install dummy h2c grpc service
 [ ] send traffic through load balancer endpoint

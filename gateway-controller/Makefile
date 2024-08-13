@@ -39,3 +39,10 @@ remove-istio:
 
 remove-gw-api:
 	$(KUBECTL) kustomize "github.com/kubernetes-sigs/gateway-api/config/crd?ref=v1.1.0" | $(KUBECTL) delete -f -
+
+
+
+
+apply: install-gw-api download-istio install-istio create-workload-ns deploy-sample-app create-gtw-resources
+
+destroy: remove-gw-api remove-sample-app remove-workload-ns remove-istio remove-gw-api 
