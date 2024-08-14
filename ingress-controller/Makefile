@@ -10,9 +10,6 @@ download-istio:
 install-istio-ingress:
 	$(ISTIOCTL) install -f ./istio-gateway.yaml -y
 
-create-infrastructure-ns:
-	$(KUBECTL) create ns $(INFRASTRUCTURE_NS)
-
 create-workload-ns:
 	$(KUBECTL) create ns $(WORKLOAD_NS)
 
