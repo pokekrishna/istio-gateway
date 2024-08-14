@@ -10,8 +10,8 @@ download-istio:
 install-istio-ingress:
 	$(ISTIOCTL) install -f $(ISTIODIR)/samples/bookinfo/demo-profile-no-gateways.yaml -y
 
-create-infrastructure-ns:
-	$(KUBECTL) create ns $(INFRASTRUCTURE_NS)
+create-workload-ns:
+	$(KUBECTL) create ns $(WORKLOAD_NS)
 
 deploy-workload:
 	$(KUBECTL) -n $(WORKLOAD_NS) apply -f $(ISTIODIR)/samples/bookinfo/platform/kube/bookinfo.yaml
@@ -26,6 +26,6 @@ remove-istio-ingress:
 	$(ISTIOCTL) uninstall -f $(ISTIODIR)/samples/bookinfo/demo-profile-no-gateways.yaml -y
 
 
-apply: download-istio install-istio-ingress create-infrastructure-ns deploy-workload create-istio-ingress-resources
+apply: download-istio install-istio-ingress create-workload-ns deploy-workload create-istio-ingress-resources
 
 destroy: remove-istio-ingress-resources remove-istio-ingress
