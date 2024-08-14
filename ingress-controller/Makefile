@@ -4,6 +4,9 @@ ISTIOCTL := $(ISTIODIR)/bin/istioctl
 WORKLOAD_NS := workload
 INFRASTRUCTURE_NS := infrastructure
 
+download-istio:
+	curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.22.2 TARGET_ARCH=x86_64 sh -
+
 install-istio-ingress:
 	$(ISTIOCTL) install -f $(ISTIODIR)/samples/bookinfo/demo-profile-no-gateways.yaml -y
 
@@ -23,6 +26,6 @@ remove-istio-ingress:
 	$(ISTIOCTL) uninstall -f $(ISTIODIR)/samples/bookinfo/demo-profile-no-gateways.yaml -y
 
 
-apply: install-istio-ingress create-infrastructure-ns deploy-workload create-istio-ingress-resources
+apply: download-istio install-istio-ingress create-infrastructure-ns deploy-workload create-istio-ingress-resources
 
 destroy: remove-istio-ingress-resources remove-istio-ingress
