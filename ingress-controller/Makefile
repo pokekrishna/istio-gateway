@@ -26,6 +26,6 @@ remove-istio-ingress:
 	$(ISTIOCTL) uninstall -f $(ISTIODIR)/samples/bookinfo/demo-profile-no-gateways.yaml -y
 
 
-apply: download-istio install-istio-ingress create-infrastructure-ns create-workload-ns deploy-workload create-istio-ingress-resources
+apply: download-istio install-istio-ingress create-workload-ns deploy-workload create-istio-ingress-resources
 
 destroy: remove-istio-ingress-resources remove-istio-ingress
