@@ -25,7 +25,13 @@ remove-istio-ingress-resources:
 remove-istio-ingress:
 	$(ISTIOCTL) uninstall -f $(ISTIODIR)/samples/bookinfo/demo-profile-no-gateways.yaml -y
 
+remove-workload:
+	$(KUBECTL) -n $(WORKLOAD_NS) delete -f $(ISTIODIR)/samples/bookinfo/platform/kube/bookinfo.yaml
+
+remove-workload-ns:
+	$(KUBECTL) delete ns $(WORKLOAD_NS)
+
 
 apply: download-istio install-istio-ingress create-workload-ns deploy-workload create-istio-ingress-resources
 
-destroy: remove-istio-ingress-resources remove-istio-ingress
+destroy: remove-istio-ingress-resources remove-workload remove-workload-ns remove-istio-ingress
