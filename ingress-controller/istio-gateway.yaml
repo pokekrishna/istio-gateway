@@ -20,5 +20,5 @@ spec:
         injectionTemplate: gateway
         serviceAnnotations:
           service.kubernetes.io/qcloud-loadbalancer-internal-subnetid: subnet-qhbqka5n
-          # service.cloud.tencent.com/pass-to-target: "true"
-          # service.cloud.tencent.com/security-groups: "sg-6eaq601v"
+          service.cloud.tencent.com/pass-to-target: "true"
+          service.cloud.tencent.com/security-groups: "sg-6eaq601v"

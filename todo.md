@@ -17,12 +17,13 @@ Tasks
 [x] install dummy http service and ingress
 [x] curl and access the service through cluster ip
 [x] curl and access the service through ingress gtw
-[ ] send traffic through load balancer endpoint
+[x] send traffic through load balancer endpoint
 
 [ ] add allow by default annotation
 [ ] add security group annotation
 
 [ ] install dummy h2c grpc service
+[ ] install dummy https app and ssl termination on ingress gtw
 [ ] cross zone load balacing 
 [ ] Health check configuration
 [ ] cross region access through CCN
