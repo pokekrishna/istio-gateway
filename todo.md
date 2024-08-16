@@ -19,6 +19,9 @@ Tasks
 [x] curl and access the service through ingress gtw
 [ ] send traffic through load balancer endpoint
 
+[ ] add allow by default annotation
+[ ] add security group annotation
+
 [ ] install dummy h2c grpc service
 [ ] cross zone load balacing 
 [ ] Health check configuration
