@@ -35,3 +35,9 @@ remove-workload-ns:
 apply: download-istio install-istio-ingress create-workload-ns deploy-workload create-istio-ingress-resources
 
 destroy: remove-istio-ingress-resources remove-workload remove-workload-ns remove-istio-ingress
+
+
+delete-ingress-gateway-service:
+	$(KUBECTL) -n $(INFRASTRUCTURE_NS) delete svc istio-ingressgateway
+
+reload-ingress-gateway-service: delete-ingress-gateway-service install-istio-ingress
