@@ -19,8 +19,13 @@ Tasks
 [x] curl and access the service through ingress gtw
 [x] send traffic through load balancer endpoint
 
-[ ] add allow by default annotation
-[ ] add security group annotation
+[x] add allow by default annotation
+[x] add security group annotation
+
+[ ] add spsec for clb istance
+[ ] add spec for clb listener
+[ ] add spec for health check
+
 
 [ ] install dummy h2c grpc service
 [ ] install dummy https app and ssl termination on ingress gtw
