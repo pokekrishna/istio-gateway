@@ -18,3 +18,5 @@ spec:
       istio-ingressgateway:
         # Enable gateway injection
         injectionTemplate: gateway
+        serviceAnnotations:
+          service.kubernetes.io/qcloud-loadbalancer-internal-subnetid: subnet-qhbqka5n

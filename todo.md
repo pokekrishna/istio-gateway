@@ -13,10 +13,13 @@ TGT
 Tasks
 [x] make destroy
 [x] delete istio-system ns
-[ ] install istio gateway as gtw controller
-[ ] install dummy https service
-[ ] install dummy h2c grpc service
+[x] install istio gateway as gtw controller
+[x] install dummy http service and ingress
+[x] curl and access the service through cluster ip
+[x] curl and access the service through ingress gtw
 [ ] send traffic through load balancer endpoint
+
+[ ] install dummy h2c grpc service
 [ ] cross zone load balacing 
 [ ] Health check configuration
 [ ] cross region access through CCN
